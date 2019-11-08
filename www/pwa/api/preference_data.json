@@ -1,0 +1,37 @@
+[{
+    "clientId": "1",
+    "clientName": "Walmart",
+    "clientImage": "walmart.png",
+    "appName": "Refill Reminder",
+    "appImage":"refillReminder.png"
+}, {
+    "clientId": "1",
+    "clientName": "Walmart",
+    "clientImage": "walmart.png",
+    "appName": "Order Pickup",
+    "appImage":"orderPickup.png"
+}, {
+    "clientId": "2",
+    "clientName": "CVS",
+    "clientImage": "cvs.png",
+    "appName": "Refill Reminder",
+    "appImage":"refillReminder.png"
+}, {
+    "clientId": "2",
+    "clientName": "CVS",
+    "clientImage": "cvs.png",
+    "appName": "Caremark Specialty",
+    "appImage":"caremarkSpecialty.png"
+}, {
+    "clientId": "3",
+    "clientName": "Bank of America",
+    "clientImage": "bankofamerica.png",
+    "appName": "Customer Assistance",
+    "appImage":"customerAssistance.png"
+}, {
+    "clientId": "4",
+    "clientName": "Bluestem",
+    "clientImage": "bluestem.png",
+    "appName": "Payment",
+    "appImage":"payment.png"
+}]

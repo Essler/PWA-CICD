@@ -1,0 +1,6 @@
+github-uri: git@repo.sandbox.west.com:Hackathon2018/Mavericks.git
+github-branch: master
+cf-api: api.sys.pcfdev.one.west.com/
+cf-org: Hackathon
+cf-space: Dev
+cf-manifest-host: Mavericks-Pipeline-ci

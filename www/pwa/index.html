@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Notifications</title>
+    <link async rel="stylesheet" href="./css/style.css">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" sizes="512x512" href="./pics/launch-icon-512.png">
+
+            <header>
+                <div class="content">
+                    <h3>Schedule Notifications</h3>
+                </div>
+            </header>
+            <div class="container">
+                <div id="main" class="content">
+                    <button type="submit" style="background-color:transparent; border-color:transparent;">
+                        <img id="clientImage" class="headImage" />
+                    </button>
+                    <h2 id="clientName"/>
+                </div>
+           
+    
+</head>
+<body>
+        <div  class="content">
+            <div id="getApp" class="dialog-title" />
+        </div>
+       <!--  <div class="wrapper">
+            <button type="submit" onclick="showDayTime()" style="background-color:transparent; border-color:transparent;">
+                <img src="./pics/refillReminder.png" height="100" width="100" />
+            </button>
+            <button type="submit" style="background-color:transparent; border-color:transparent;">
+
+            </button> -->
+<!--            
+                <button type="submit" style="background-color:transparent; border-color:transparent;">
+                    <img src="./pics/provideFeedback.png" height="100" width="100" />
+                </button>
+       
+        </div> -->
+
+        <!--  <div id= "x" class="container">
+                    <div id="main" class="content">
+                     <button onclick="showDayTime()">Schedule my Call for:</button>
+                     
+                    </div>
+                </div>-->
+
+        <div id="daytime" class="dialog" style="display: none">
+            <div class="dialog-title"><b>Select a day</b></div>
+            <div class="dialog-body">
+                <select id="day" name="day">
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                 </select>
+            </div>
+            
+            
+            <div class="dialog-title"><b>Select a time</b></div>
+			<div class="dialog-body">
+				<input id="time" name="time" type="time" value="09:00">
+			</div>
+			
+			<div class="dialog-buttons">
+                   <button id="Submit" class="button">Submit</button>  
+			</div> 
+		
+		</div>
+
+		<script src="./js/app.js"></script>
+    </body>
+</html>

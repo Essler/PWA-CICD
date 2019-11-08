@@ -1,0 +1,22 @@
+applications:
+ - name: custom-notifications
+   memory: 1G
+   instances: 1
+   path: ./www/pwa/.
+   buildpack: staticfile_buildpack
+
+   env:
+     SKIP_SSL_VALIDATION: "true"
+     # Grant type to be set for the application's UAA client configurations. Only one grant type per application is supported by the SSO service.
+     GRANT_TYPE: client_credentials
+     # Identity provider(s) to be set for the application's client configurations
+     SSO_IDENTITY_PROVIDERS: uaa
+     # Client authorities for the application, only used for client credentials grant type
+     SSO_AUTHORITIES: openid, uaa.resource
+       #, todo1.read, todo1.write
+     # Lifetime in seconds of the application's access token
+     SSO_ACCESS_TOKEN_LIFETIME: 300
+     # Resource(s) that the application will use as scopes/authorities to be created if they do not already exist during bootstrapping
+     #SSO_RESOURCES: |
+     #  todo1.read:  Read Objects
+     #  todo1.write: Write Objects

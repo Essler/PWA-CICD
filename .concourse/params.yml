@@ -1,0 +1,5 @@
+github-deployment-control-repo: https://repo.sandbox.west.com/Hackathon2018/Mavericks.git
+github-environment-control-file-path: environments/sandbox/environment.json
+github-access-token: Mavericks
+email-address-sender: gaweigner@west.com
+email-address-recipient: gaweigner@west.com

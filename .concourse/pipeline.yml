@@ -1,0 +1,76 @@
+#resource_types:
+# - name: artifactory
+#   type: generic
+#   source:
+#     repository: pivotalservices/artifactory-resource
+
+resources:
+ - name: github-repository
+   type: git
+   check_every: 1h
+   source:
+     uri: git@repo.sandbox.west.com:Hackathon2018/Mavericks.git
+     branch: master
+     private_key: ((private-repo-key))
+
+# - name: artifactory-repository
+#   type: artifactory
+#   check_every: 1m
+#   source:
+#     endpoint: https://artifacts.sandbox.west.com/artifactory
+#     repository: "/Hackathon/"
+#     regex: "custom-notifications-(?version.*).tgz"
+#     api_token: ((artifactory_token))
+
+ - name: cloud-foundry
+   type: cf
+   source:
+     api: api.sys.pcfdev.one.west.com
+     username: ((cf_user))
+     password: ((cf_password))
+     organization: Hackathon
+     space: Dev
+     skip_cert_check: true
+
+jobs:
+ - name: get-and-deploy
+   serial: true
+   public: true
+   plan:
+   - get: github-repository
+     trigger: true
+#
+# I think we dont need to build an artifact
+# since our repo will be tar'd
+# when we get and put.
+#
+#   - task: build-artifact
+#     outputs:
+#       - name: build
+#       run:
+#         path: sh
+#         args:
+#         - -exc
+#         - |
+#           zip -r custom-notifications-version.zip github-repository
+#           echo "This is my file" > ./custom-notifications-version.zip
+#           find .
+#
+# Firewall is in place currently. need to manually copy the zip file.
+#
+#   - put: artifactory-repository
+#     params:
+#       file: ./custom-notifications-*.zip
+#
+#   - put: artifactory-repository
+#     params:
+#       globs:
+#       - github-repository/*.tgz
+#       repository: github-repository
+
+   - put: cloud-foundry
+     params:
+       repository: github-repository
+       manifest: github-repository/manifest.yml
+       current_app_name: custom-notifications
+       path: .
